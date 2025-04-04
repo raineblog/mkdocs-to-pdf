@@ -20,7 +20,7 @@ def download_mkdocs(path, target, subject):
             for element in item:
                 process(present, element)
         elif isinstance(item, str):
-            file_path = os.path.join('https://raineblog.github.io/whk/', item, 'index.html').replace('index\\index.html', 'index.html')
+            file_path = os.path.join('https://raineblog.github.io/whk/', item, 'index.html?export=true').replace('index\\index.html', 'index.html')
             title = common.get_title(os.path.join(path, 'docs', item + '.md'))
             print("Fetch content:", file_path, title)
             lists.append([file_path, os.path.join(present, title + '.pdf')])
